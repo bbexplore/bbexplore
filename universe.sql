@@ -89,7 +89,8 @@ CREATE TABLE public.moon (
     name character varying(50) NOT NULL,
     planet_id integer,
     explored boolean NOT NULL,
-    random1 integer
+    random1 integer,
+    visible boolean
 );
 
 
@@ -267,87 +268,77 @@ ALTER TABLE ONLY public.star ALTER COLUMN star_id SET DEFAULT nextval('public.st
 -- Data for Name: galaxy; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-COPY public.galaxy (galaxy_id, name, size, random1, random2) FROM stdin;
-1	G01	1	\N	\N
-2	G02	1	\N	\N
-3	G03	1	\N	\N
-4	G04	2	\N	\N
-5	G05	2	\N	\N
-6	G06	3	\N	\N
-\.
+INSERT INTO public.galaxy VALUES (1, 'G01', 1, NULL, NULL);
+INSERT INTO public.galaxy VALUES (2, 'G02', 1, NULL, NULL);
+INSERT INTO public.galaxy VALUES (3, 'G03', 1, NULL, NULL);
+INSERT INTO public.galaxy VALUES (4, 'G04', 2, NULL, NULL);
+INSERT INTO public.galaxy VALUES (5, 'G05', 2, NULL, NULL);
+INSERT INTO public.galaxy VALUES (6, 'G06', 3, NULL, NULL);
 
 
 --
 -- Data for Name: moon; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-COPY public.moon (moon_id, name, planet_id, explored, random1) FROM stdin;
-1	M01	1	f	\N
-2	M02	2	t	\N
-3	M03	3	f	\N
-4	M04	4	t	\N
-5	M05	5	f	\N
-6	M06	1	f	\N
-7	M07	2	t	\N
-8	M08	3	f	\N
-9	M09	4	t	\N
-10	M10	5	f	\N
-11	M11	1	f	\N
-12	M12	2	t	\N
-13	M13	3	f	\N
-14	M14	4	t	\N
-15	M15	5	f	\N
-16	M16	1	f	\N
-17	M17	2	t	\N
-18	M18	3	f	\N
-19	M19	4	t	\N
-20	M20	5	f	\N
-\.
+INSERT INTO public.moon VALUES (1, 'M01', 1, false, NULL, NULL);
+INSERT INTO public.moon VALUES (2, 'M02', 2, true, NULL, NULL);
+INSERT INTO public.moon VALUES (3, 'M03', 3, false, NULL, NULL);
+INSERT INTO public.moon VALUES (4, 'M04', 4, true, NULL, NULL);
+INSERT INTO public.moon VALUES (5, 'M05', 5, false, NULL, NULL);
+INSERT INTO public.moon VALUES (6, 'M06', 1, false, NULL, NULL);
+INSERT INTO public.moon VALUES (7, 'M07', 2, true, NULL, NULL);
+INSERT INTO public.moon VALUES (8, 'M08', 3, false, NULL, NULL);
+INSERT INTO public.moon VALUES (9, 'M09', 4, true, NULL, NULL);
+INSERT INTO public.moon VALUES (10, 'M10', 5, false, NULL, NULL);
+INSERT INTO public.moon VALUES (11, 'M11', 1, false, NULL, NULL);
+INSERT INTO public.moon VALUES (12, 'M12', 2, true, NULL, NULL);
+INSERT INTO public.moon VALUES (13, 'M13', 3, false, NULL, NULL);
+INSERT INTO public.moon VALUES (14, 'M14', 4, true, NULL, NULL);
+INSERT INTO public.moon VALUES (15, 'M15', 5, false, NULL, NULL);
+INSERT INTO public.moon VALUES (16, 'M16', 1, false, NULL, NULL);
+INSERT INTO public.moon VALUES (17, 'M17', 2, true, NULL, NULL);
+INSERT INTO public.moon VALUES (18, 'M18', 3, false, NULL, NULL);
+INSERT INTO public.moon VALUES (19, 'M19', 4, true, NULL, NULL);
+INSERT INTO public.moon VALUES (20, 'M20', 5, false, NULL, NULL);
 
 
 --
 -- Data for Name: people; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-COPY public.people (people_id, name, degree) FROM stdin;
-1	PERSON01	PHD
-2	PERSON02	PHD
-3	PERSON03	PHD
-\.
+INSERT INTO public.people VALUES (1, 'PERSON01', 'PHD');
+INSERT INTO public.people VALUES (2, 'PERSON02', 'PHD');
+INSERT INTO public.people VALUES (3, 'PERSON03', 'PHD');
 
 
 --
 -- Data for Name: planet; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-COPY public.planet (planet_id, name, star_id, history, orbitnum, size_km, psi) FROM stdin;
-1	P01	1	long	3	10000	14.90
-2	P02	1	long	4	20000	14.10
-3	P03	1	long	5	30000	14.40
-4	P04	2	long	3	10000	14.90
-5	P05	2	long	4	20000	14.10
-6	P06	2	long	5	30000	14.40
-7	P07	3	long	3	10000	14.90
-8	P08	3	long	4	20000	14.10
-9	P09	3	long	5	30000	14.40
-10	P10	4	long	3	10000	14.90
-11	P11	4	long	4	20000	14.10
-12	P12	4	long	5	30000	14.40
-\.
+INSERT INTO public.planet VALUES (1, 'P01', 1, 'long', 3, 10000, 14.90);
+INSERT INTO public.planet VALUES (2, 'P02', 1, 'long', 4, 20000, 14.10);
+INSERT INTO public.planet VALUES (3, 'P03', 1, 'long', 5, 30000, 14.40);
+INSERT INTO public.planet VALUES (4, 'P04', 2, 'long', 3, 10000, 14.90);
+INSERT INTO public.planet VALUES (5, 'P05', 2, 'long', 4, 20000, 14.10);
+INSERT INTO public.planet VALUES (6, 'P06', 2, 'long', 5, 30000, 14.40);
+INSERT INTO public.planet VALUES (7, 'P07', 3, 'long', 3, 10000, 14.90);
+INSERT INTO public.planet VALUES (8, 'P08', 3, 'long', 4, 20000, 14.10);
+INSERT INTO public.planet VALUES (9, 'P09', 3, 'long', 5, 30000, 14.40);
+INSERT INTO public.planet VALUES (10, 'P10', 4, 'long', 3, 10000, 14.90);
+INSERT INTO public.planet VALUES (11, 'P11', 4, 'long', 4, 20000, 14.10);
+INSERT INTO public.planet VALUES (12, 'P12', 4, 'long', 5, 30000, 14.40);
 
 
 --
 -- Data for Name: star; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-COPY public.star (star_id, name, galaxy_id, random1, random2) FROM stdin;
-1	S01	1	0	\N
-2	S02	2	0	\N
-3	S03	3	0	\N
-4	S04	4	0	\N
-5	S05	5	0	\N
-6	S06	6	0	\N
-\.
+INSERT INTO public.star VALUES (1, 'S01', 1, 0, NULL);
+INSERT INTO public.star VALUES (2, 'S02', 2, 0, NULL);
+INSERT INTO public.star VALUES (3, 'S03', 3, 0, NULL);
+INSERT INTO public.star VALUES (4, 'S04', 4, 0, NULL);
+INSERT INTO public.star VALUES (5, 'S05', 5, 0, NULL);
+INSERT INTO public.star VALUES (6, 'S06', 6, 0, NULL);
 
 
 --
